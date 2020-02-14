@@ -1,0 +1,249 @@
+:root {
+    --bg: #171717;
+    --fg1: #ff9249;
+    --fg2: #ff3f73;
+    --fg2a: 255,63,115;
+}
+
+* {
+    font-family: 'Kulim Park', sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    overflow-x: hidden;
+}
+
+.cont {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.inner {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 30vw;
+    margin-left: 35vw;
+}
+
+.inner2 {
+    margin: 0;
+    position: absolute;
+    top: 36vh;
+    width: 30vw;
+    margin-left: 35vw;
+    padding-bottom: 28vh;
+}
+
+h1 {
+    font-size: 3vw;
+    margin: 0;
+    color: var(--fg1);
+    margin-bottom: .3vw;
+}
+
+h2 {
+    font-size: 2vw;
+    margin: 0;
+    margin-top: 1.2vw;
+    color: var(--fg2);
+    margin-bottom: -.8vw;
+}
+
+p {
+    color: white;
+    font-size: 1.3vw;
+    margin: 0;
+    margin-bottom: .5vw;
+}
+
+.lnk {
+    color: var(--fg1);
+    font-size: 1.3vw;
+    transition: .4s;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.lnk:hover {
+    color: var(--fg2);
+}
+
+.btn {
+    text-decoration: none;
+    font-size: 1.3vw;
+    padding: .4vw 1.2vw;
+    margin-top: 2vw !important;
+    color: var(--bg);
+    background: rgb(122,78,255);
+    background: linear-gradient(135deg, var(--fg1) 0%, var(--fg2) 100%);
+    background-size: 200%;
+    background-position: 0% 0;
+    transition: .4s;
+    border-radius: 50vw;
+    position: relative;
+    bottom: 0;
+}
+
+.btn:hover {
+    background-position: 100% 0;
+    bottom: .4vw;
+    box-shadow: 0 .1vw 1vw rgba(var(--fg2a),.25);
+}
+
+.btn:hover .arrow {
+    left: 2.5vw;
+}
+
+.btn:hover .arrow::before {
+    right: 2.5vw;
+    opacity: 1;
+}
+
+.btn:hover .mail {
+    top: 2vw;
+}
+
+.btn:hover .mail::before {
+    top: -2.2vw;
+    opacity: 1;
+}
+
+.arrow {
+    position: relative;
+    top: -.05vw;
+    transition: .4s;
+    left: -.1vw;
+}
+
+.mail {
+    position: relative;
+    top: 0vw;
+    transition: .4s;
+    left: -.1vw;
+}
+
+.arrow::before {
+    position: absolute;
+    content: '\02192';
+    color: var(--bg);
+    right: .8vw;
+    opacity: 0;
+    transition: .4s;
+}
+
+.mail::before {
+    position: absolute;
+    content: '\2709';
+    color: var(--bg);
+    right: 0;
+    opacity: 0;
+    transition: .4s;
+    top: -1.2vw;
+}
+
+.navbar {
+    list-style: none;
+    padding: 0;
+    text-align: right;
+    position: absolute;
+    right: 0;
+    margin: 3vw;
+    z-index: 1000;
+}
+
+.navbar li {
+    display: block;
+    margin: 0 1vw;
+}
+
+.navbar li a {
+    color: var(--fg1);
+    text-decoration: none;
+    font-size: 1.5vw;
+    position: relative;
+    right: 0;
+    transition: .4s;
+    background: linear-gradient(135deg, var(--fg1) 0%, var(--fg2) 100%);
+    background-size: 200%;
+    background-position: 0% 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+}
+
+.navbar li a::after {
+    position: absolute;
+    content: '.';
+    bottom: 13%;
+    font-size: 2vw;
+    right: -1.2vw;
+    opacity: 0;
+    transition: .4s;
+    -webkit-text-fill-color: var(--fg2);
+}
+
+.navbar li a:hover::after, .navbar li a.active::after {
+    right: -.7vw;
+    opacity: 1;
+}
+
+/*
+.navbar li a::after {
+  position: absolute;
+  content: '.';
+  bottom: -3%;
+  right: -.4vw;
+  font-size: 2vw;
+  transition: .4s;
+  -webkit-text-fill-color: var(--fg2);
+}
+
+.navbar li a:hover::after {
+  right: -.9vw;
+  opacity: 1;
+  bottom: 13%;
+}
+*/
+
+.navbar li a:hover, .navbar li a.active {
+    right: .5vw;
+    background-position: 100% 0;
+}
+
+.vidcontcont {
+    box-shadow: .2vw .2vw 0 var(--bg), .5vw .5vw 0 var(--fg2);
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: .5s;
+    margin-top: 1vw;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.vidcont {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+}
+
+.vidcont iframe {
+    position: absolute;
+    top: -.07vw;
+    left: -.06vw;
+    width: 100%;
+    height: 100%;
+}

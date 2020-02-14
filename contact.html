@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Prepy2D</title>
+		<link href="https://fonts.googleapis.com/css?family=Kulim+Park:400,600,700&display=swap" rel="stylesheet">
+		<link href="styles.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+	</head>
+	<body>
+		<ul class="navbar">
+			<li><a href="index.html">home</a></li>
+			<li><a href="products.html">products</a></li>
+			<li><a href="contact.html" class="active">contact</a></li>
+		</ul>
+		<div class="cont">
+			<div class="inner">
+				<h1>Contact me.</h1>
+				<p>Via <a class="lnk" onclick="copyClip('Prepy#6253');Swal.fire('Thanks!','Copied Discord username to clipboard.','success');">Discord (Prepy#6253)</a> or <a href="mailto:prepyplayz@icloud.com" class="lnk">email</a></p>
+			</div>
+		</div>
+		<script>
+            function copyClip(str) {
+                var el = document.createElement("textarea");
+                el.value = str;
+                el.setAttribute("readonly", "");
+                el.style = { position: "absolute", left: "-9999px" };
+                document.body.appendChild(el);
+                el.select();
+                document.execCommand("copy");
+                document.body.removeChild(el);
+            }
+		</script>
+	</body>
+</html>
